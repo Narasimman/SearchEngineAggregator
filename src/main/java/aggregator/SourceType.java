@@ -1,0 +1,1 @@
+package aggregator;public enum SourceType {  GOOGLE,  BING,  YAHOO}

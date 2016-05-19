@@ -1,0 +1,36 @@
+apply plugin: "java"
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'application'
+
+version = 1.0
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+
+manifest {
+  attributes 'Implementation-Title': 'Search Engine Aggregator', 'Implementation-Version': version,
+  'Main-Class': 'driver.SearchAggregator'
+}
+
+dependencies {
+    compile 'org.apache.httpcomponents:httpclient:4.5.2', 'javax.servlet:javax.servlet-api:3.1.0', 'com.google.code.gson:gson:1.7.2', 'org.jsoup:jsoup:1.8.3'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+} 

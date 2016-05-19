@@ -1,0 +1,1 @@
+package aggregator;import java.util.List;import aggregator.Link;/** * Interface for a search engine results crawler * @author Narasimman * */public interface IAggregator {  /**   * make a http request to the search engine and gather results   * @param query   * @return a list of results of type Link Objects   */  public List<Link> getResults(String query);}
